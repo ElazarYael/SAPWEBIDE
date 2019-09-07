@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.sap.ariba.employeerequisition.controller.App"
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}">
+
+		<App id="idAppControl">
+			<pages>
+				<Page id="page" title="App">
+					<content></content>
+				</Page>
+			</pages>
+		</App>
+
+</mvc:View>

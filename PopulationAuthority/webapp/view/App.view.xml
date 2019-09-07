@@ -1,0 +1,61 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="PopulationAuthority.PopulationAuthority.controller.App" height="100%" xmlns:t="sap.tnt" xmlns="sap.m">
+	<SplitApp id="SplitAppDemo" initialDetail="detail1" initialMaster="master1" orientationChange="onOrientationChange">
+		<detailPages>
+			<Page id="detail1" title="Detail 1">
+				<content>
+					<Label text="Detail page 1"/>
+					<Button text="Go to Detail page2" press="onPressNavToDetail"/>
+				</content>
+			</Page>
+			<Page id="detail2" title="Detail Detail" class="sapUiStdPage">
+				<content>
+					<Wizard id="_id_wizard"   complete="onPressReview" finishButtonText="בצע ושמור" showNextButton="true">
+						<WizardStep id="id_wizStp1" validated="true"/>
+						<WizardStep id="id_wizStp2" validated="true" />
+						<WizardStep id="id_wizStp3" validated="true"/>
+					</Wizard>
+					
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page id="master1" title="Master 2" icon="sap-icon://action" >
+				<content>
+					<SearchField id="searchField" width="100%" placeholder="search for..." enableSuggestions="true" search="onSearch" suggest="onSuggest"
+						suggestionItems="{ path: '/ProductCollection', sorter: { path: 'Name' } }">
+						<suggestionItems>
+							<SuggestionItem text="{Name}" description="{path:'Price'} {path:'CurrencyCode'}" key="{ProductId}"/>
+						</suggestionItems>
+					</SearchField>
+					<Button  icon="sap-icon://menu2" press="onCollapseExpandPress"/>
+					<t:SideNavigation  id="sideNavigation"   selectedKey="subItem3">
+						<t:item>
+							<t:NavigationList>
+								<t:NavigationListItem text="Item 1" icon="sap-icon://employee"  select="onHideShowSubItemPress">
+									<t:NavigationListItem text="detail2" id="detail2subItem2" key="subItem3" select="OnselectItem"/>
+									<t:NavigationListItem text="Sub Item 2"  id="subItem2" key="subItem3"/>
+									<t:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3"/>
+									<t:NavigationListItem text="Sub Item 4"  id="subItem4" key="subItem3"/>
+								</t:NavigationListItem>
+								<t:NavigationListItem text="Item 2" icon="sap-icon://building" select="onHideShowSubItemPress">
+									<t:NavigationListItem text="Sub Item 1"/>
+									<t:NavigationListItem text="Sub Item 2"/>
+									<t:NavigationListItem text="Sub Item 3"/>
+									<t:NavigationListItem text="Sub Item 4"/>
+								</t:NavigationListItem>
+							</t:NavigationList>
+						</t:item>
+						<t:fixedItem>
+							<t:NavigationList>
+								<t:NavigationListItem text="Item 1" icon="sap-icon://employee"/>
+								<t:NavigationListItem text="Item 2" icon="sap-icon://building"/>
+								<t:NavigationListItem text="Item 3" icon="sap-icon://card"/>
+							</t:NavigationList>
+						</t:fixedItem>
+					</t:SideNavigation>
+				</content>
+			</Page>
+		</masterPages>
+	</SplitApp>
+</mvc:View>

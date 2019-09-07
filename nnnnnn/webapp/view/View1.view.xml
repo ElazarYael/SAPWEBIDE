@@ -1,0 +1,337 @@
+<!--<mvc:View controllerName="nnnnnnn.nnnnnn.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content></content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>-->
+
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:layout="sap.ui.layout" xmlns:Table="sap.m.Table" xmlns:form="sap.ui.layout.form" controllerName="nnnnnnn.nnnnnn.controller.View1"
+	displayBlock="true" height="100%">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Wizard id="id_wizard" complete="onPressReview" finishButtonText="סיום משימה" showNextButton="true" enableBranching="false">
+						<WizardStep id="id_wizStp1" validated="true" title="כללי">
+							<form:SimpleForm id="id1" backgroundDesign="Transparent" editable="true">
+								<core:Title text="כללי"/>
+								<Label text="מספר בקשה" required="true"/>
+								<Input/>
+								<Label text="סוג בקשה" required="true"/>
+								<Input/>
+								<Label text="תת סוג בקשה"/>
+								<Select ></Select>
+								<Label text="מקום הגשת הבקשה" required="true"/>
+								<Select></Select>
+								<core:Title text=""/>
+								<Label text="מספר דרכון" required="true"/>
+								<Select ></Select>
+								<Label text="נתינות" required="true"/>
+								<Select ></Select>
+								<Label text="שפת ראיון מועדפת"/>
+								<Select ></Select>
+								<Label text="מגדר מראיין מועדף"/>
+								<Select ></Select>
+								<core:Title text="מידע אישי"/>
+								<Label text="אזרחות נוספת"/>
+								<Select></Select>
+								<Label text="מדינת מקור" required="true"/>
+								<Select></Select>
+								<Label text="ישוב" required="true"/>
+								<Select></Select>
+								<Label text="מדינת מקור"/>
+								<Input/>
+								<Label text="מחוז"/>
+								<Input/>
+								<core:Title text=""/>
+								<Label text="ישוב"/>
+								<Input/>
+								<Label text="מצב אישי" required="true"/>
+								<Select>
+									<items>
+										<core:Item text="רווק/ה"/>
+										<core:Item text="נשוי/אה"/>
+										<core:Item text="מאורס/ת"/>
+										<core:Item text="גרוש/ה"/>
+										<core:Item text="פרוד/ה"/>
+										<core:Item text="אלמן/ה"/>
+									</items>
+								</Select>
+								<Label text="זרם בדת" required="true"/>
+								<Select></Select>
+								<Label text="אתניות" required="true"/>
+								<Input/>
+							</form:SimpleForm>
+							<Button text="יציאה"/>
+							<Button text="שמירה ויציאה"/>
+						</WizardStep>
+						<WizardStep id="id_wizStp2" validated="true" title="פרטי התקשרות">
+							<form:SimpleForm backgroundDesign="Transparent" editable="true">
+								<core:Title text="פרטי קשר של המבקש"/>
+								<Label text="טלפון" required="true"/>
+								<Input/>
+								<Label text="טלפון נוסף"/>
+								<Input/>
+						    	<Label text="כתובת דואר אלקטרוני" required="true"/>
+								<Input/>
+								<Label text="רחוב" required="true"/>
+								<Input/>
+								<Label text="מספר בית" required="true"/>
+								<Input/>
+								<core:Title text="פרטי קשר של הגורם המייצג"/>
+								<Label text="האם יש גורם מייצג"/>
+								<Input/>
+								<Label text="הגורם המייצג"/>
+								<SearchField width="100%" liveChange="onSearch" placeholder=""></SearchField>
+								<Label text="טלפון"/>
+								<Input/>
+								<Label text="טלפון נוסף"/>
+								<Input/>
+								<Label text="כתובת דואר אלקטרוני"/>
+								<Input/>
+							
+								<core:Title text="העלאת צרופה"/>
+				<layout:VerticalLayout class="sapUiContentPadding" >
+	
+								
+											<Text text="סוג הצרופה"/>
+
+								<Select id="idselect">
+									<items>
+										<core:Item text="פרוטוקול ראיון"/>
+										<core:Item text="חוות דעת"/>
+										<core:Item text="דרכון"/>
+										<core:Item text="תעודת זהות"/>
+										<core:Item text="מסמך מזהה"/>
+									</items>
+								</Select>
+
+								<SearchField width="100%" liveChange="onSearch" placeholder="חפש"></SearchField>
+								<Table id="idProductsTable3" mode="MultiSelect" >
+								
+								<columns>
+									<Column width="8em">
+										<Text text="שם המסמך"/>
+									</Column>
+									<Column width="8em">
+										<Text text="סוג צרופה"/>
+									</Column>
+									<Column width="8em">
+										<Text text="סוג המסמך"/>
+									</Column>
+									<Column width="8em">
+										<Text text="תאריך העלאה"/>
+									</Column>
+									<Column width="8em">
+										<Text text="צרופה"/>
+									</Column>
+									<Column width="8em">
+										<Text text="צפייה"/>
+									</Column>
+									<Column width="8em">
+										<Text text=""/>
+									</Column>
+									<Column width="8em">
+										<Text text="מסמך נוסף"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Input/>
+											<Input value="{idselect}" />
+											<Input/>
+											<Input/>
+											<Button text="brouse" />
+											
+									
+
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://show" press="handleNewItemAdd"/>
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://accept" press="handleNewItemDelete" />
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://add-document" press="handleNewItemDelete" />
+
+								
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+								</layout:VerticalLayout>
+							</form:SimpleForm >
+							</WizardStep>
+						<WizardStep id="id_wizStp3" title="השכלה ותעסוקה">
+						
+							<Table id="idProductsTable" mode="MultiSelect">
+								<headerToolbar >
+									<OverflowToolbar >
+										<Text text="בני משפחה ונלווים בישראל"></Text>
+										<ToolbarSpacer/>
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://add" press="handleNewItemAdd"/>
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://delete" press="handleNewItemDelete"/>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="12em">
+										<Text text="שם מלא"/>
+									</Column>
+									<Column width="12em">
+										<Text text="מספר דרכון"/>
+									</Column>
+									<Column width="12em">
+										<Text text="קשר למבקש"/>
+									</Column>
+									<Column width="12em">
+										<Text text="מין"/>
+									</Column>
+									<Column width="12em">
+										<Text text="תאריך לידה"/>
+									</Column>
+									<Column width="12em">
+										<Text text="נתינות"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Input/>
+											<Input/>
+											<Input/>
+											<Input/>
+											<Input/>
+											<Input/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<Table id="idProductsTable2" mode="MultiSelect" items="{path: '/ProductCollection'}">
+								<headerToolbar >
+									<OverflowToolbar >
+										<Text text="בני משפחה ונלווים מחוץ לישראל"></Text>
+										<ToolbarSpacer/>
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://add" press="handleNewItemAdd"/>
+										<OverflowToolbarButton type="Transparent" icon="sap-icon://delete" press="handleNewItemDelete"/>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="12em">
+										<Text text="שם מלא"/>
+									</Column>
+									<Column width="12em">
+										<Text text="קשר למבקש"/>
+									</Column>
+									<Column width="12em">
+										<Text text="תאריך לידה"/>
+									</Column>
+									<Column width="12em">
+										<Text text="נתינות"/>
+									</Column>
+									<Column width="12em">
+										<Text text="עיסוק"/>
+									</Column>
+									<Column width="12em">
+										<Text text="מספר דרכון"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Input/>
+											<Input/>
+											<Input/>
+											<Input/>
+											<Input/>
+											<Input/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+
+								<Table id="idProductsTable4" mode="MultiSelect" >
+									<headerToolbar>
+										<OverflowToolbar >
+									<Text text="כתובת אחרונה בארץ המוצא"></Text>
+									</OverflowToolbar >
+									</headerToolbar>
+									<columns>
+										<Column width="12em">
+											<Label text="ישוב במדינת המוצא" required="true"></Label>
+										</Column>
+										<Column width="12em">
+											<Text text="טלפון במדינת המוצא"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+										<cells>
+											<Input  required="true"/>
+											<Input/>
+										</cells>
+									</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="idProductsTable5" mode="MultiSelect" >
+									<headerToolbar>
+										<OverflowToolbar >
+									<Text text="הסטורית הגשת בקשות מקלט"></Text>
+									</OverflowToolbar >
+									</headerToolbar>
+									<columns>
+										<Column width="12em">
+											<Label text="בקשת מקלט הוגשה במדינה אחרת" required="true"></Label>
+										</Column>
+										<Column width="12em">
+											<Text text="מדינה בה הוגשה הבקשה"></Text>
+										</Column>
+										<Column width="12em">
+											<Text text="תאריך הגשה"></Text>
+										</Column>
+										<Column width="12em">
+											<Text text="החלטה/סטאטוס שהתקבל"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+										<cells>
+											<Input  />
+											<Input/>
+											<Input/>
+											<Input/>
+										</cells>
+									</ColumnListItem>
+									</items>
+								</Table>
+								
+						</WizardStep>
+						<WizardStep id="id_wizStp4" title="תיעוד מסע"/>
+						<WizardStep id="id_wizStp5" title="אישור קריאה">
+							<form:SimpleForm backgroundDesign="Transparent" editable="true">
+								<core:Title text="החלטה"/>
+								<layout:VerticalLayout class="sapUiContentPadding">
+									<Select width="150px">
+										<items>
+											<core:Item text="בחירה"/>
+											<core:Item text="המלצה"/>
+											<core:Item text="קביעת ראיון"/>
+											<core:Item text="השלמת נתונים"/>
+											<core:Item text="סגירת תכנית"/>
+										</items>
+									</Select>
+									<Text
+										text="Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget..."/>
+									<OverflowToolbarButton type="Transparent" icon="sap-icon://overflow" press="handleNewItemAdd"/>
+								</layout:VerticalLayout>
+								<core:Title text="הערות חדשה"/>
+								<TextArea rows="8" width="60%"/>
+							</form:SimpleForm >
+						</WizardStep>
+					</Wizard>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

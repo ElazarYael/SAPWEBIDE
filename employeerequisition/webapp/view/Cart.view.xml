@@ -1,0 +1,16 @@
+<!--<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.sap.ariba.employeerequisition.controller.Cart" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title">
+				<content></content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>-->
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:semantic="sap.m.semantic"
+	controllerName="com.sap.ariba.employeerequisition.controller.Cart" xmlns:html="http://www.w3.org/1999/xhtml">
+	<semantic:FullscreenPage title="Cart" showNavButton="true" navButtonPress="onNavButtonPress" id="FullScreenApp">
+	</semantic:FullscreenPage>
+</mvc:View>

@@ -1,0 +1,25 @@
+<mvc:View controllerName="VboxAndHbox.VboxAndHbox.controller.App" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<HBox  class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"  alignContent="Start" width="150%" alignItems="Start" busy="false" wrap="Wrap" fitContainer="true" direction="ColumnReverse" displayInline="false">
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<core:Fragment fragmentName="VboxAndHbox.VboxAndHbox.view.Card" type="XML"/>
+								<!--<core:Fragment fragmentName="VboxAndHbox.VboxAndHbox.view.Card" type="XML"/>
+								<core:Fragment fragmentName="VboxAndHbox.VboxAndHbox.view.Card" type="XML"/>-->
+							</VBox>
+							<core:Fragment fragmentName="VboxAndHbox.VboxAndHbox.view.Card" type="XML"/>
+						<!--	FlexItemData-->
+					<!--	<FlexBox></FlexBox>-->
+				<!--	<VBox></VBox>
+					<HBox></HBox>-->
+						</HBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

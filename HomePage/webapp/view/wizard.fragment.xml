@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Wizard complete="onPressReview" finishButtonText="סיום" showNextButton="true">
+		<WizardStep id="A" title="A">
+			<form:SimpleForm id="id1" backgroundDesign="Transparent" editable="true">
+				<core:Title text="Title"/>
+				<Label text="Text Label" required="true"/>
+				<Input/>
+				<Label text="Text input" required="true"/>
+				<Input/>
+				
+			</form:SimpleForm>
+		</WizardStep>
+		<WizardStep id="B1" title="B1" nextStep="C"></WizardStep>
+		<WizardStep id="B2" title="B2" nextStep="C"></WizardStep>
+		<WizardStep id="C" title="C" nextStep="D"></WizardStep>
+		<WizardStep id="D" title="D" nextStep="E"></WizardStep>
+		<WizardStep id="E" title="E" subsequentSteps="F1, F2"></WizardStep>
+	</Wizard>
+</core:FragmentDefinition>

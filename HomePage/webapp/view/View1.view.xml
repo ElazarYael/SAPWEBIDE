@@ -1,0 +1,88 @@
+<!--<mvc:View controllerName="HomePage.HomePage.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content></content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>-->
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml" controllerName="HomePage.HomePage.controller.View1">
+	<App id="app">
+		<pages>
+			<Page id="page">
+				<headerContent>
+					<!--<core:HTML content='&lt;header class=&quot;divborder&quot;&gt;Header&lt;/header&gt;'>-->
+					<core:Fragment fragmentName="HomePage.HomePage.view.SHeader" type="XML"/>
+				</headerContent>
+			
+				<!--<l:Grid defaultSpan="XL3 L3 M6 S12">
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button"></Button>
+				</l:Grid>
+				<l:Grid defaultSpan="XL3 L2 M6 S12" defaultIndent="XL1 L0 M1 S1">
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button"></Button>
+				</l:Grid>
+				<l:Grid defaultSpan="XL3 L4 M6 S6">
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button">
+						<layoutData>
+							<l:GridData span="L2"/>
+						</layoutData>
+					</Button>
+					<Button width="100%" text="Button"></Button>
+					<Button width="100%" text="Button GridData span=L2">
+						<layoutData>
+							<l:GridData span="L2"/>
+						</layoutData>
+					</Button>
+				</l:Grid>-->
+				<l:Grid defaultSpan="XL3 L3 M2 S2" defaultIndent="XL1 L0 M0 S0">
+					<Button width="100%" text="Button">
+						<layoutData>
+							<l:GridData visibleM="false" visibleS="false"  span="L1"/>
+						</layoutData>
+					</Button>
+					<Button width="100%" text="Button">
+						<layoutData>
+							<l:GridData visibleM="false" visibleS="false" span="L1"/>
+						</layoutData>
+					</Button>
+				
+				
+					<Button width="100%"  visible="false">
+						<layoutData>
+							<l:GridData span="L4"/>
+						</layoutData>
+					</Button>
+					<core:Fragment fragmentName="HomePage.HomePage.view.Card" type="XML"/>
+					<core:Fragment fragmentName="HomePage.HomePage.view.Card" type="XML"/>
+				</l:Grid>
+				<l:Grid defaultSpan="XL10 L12 M12 S12" defaultIndent="XL1 L0">
+					<core:Fragment fragmentName="HomePage.HomePage.view.wizard" type="XML"/>
+				</l:Grid>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Accept" type="Accept"/>
+						<Button text="Reject" type="Reject"/>
+						<Button text="Edit"/>
+						<Button text="Delete"/>
+					</OverflowToolbar>
+				</footer>
+				<VBox></VBox>
+				<HBox></HBox>
+				<!--<ObjectPage></ObjectPage>-->
+				<!--<core:Fragment fragmentName="HomePage.HomePage.view.Card" type="XML"/>-->
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

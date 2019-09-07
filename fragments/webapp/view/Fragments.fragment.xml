@@ -1,0 +1,6 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Button text="click me" press="onClick"/>
+   <Label text="hello"/>
+</core:FragmentDefinition>

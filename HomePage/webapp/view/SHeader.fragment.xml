@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" height="100%">
+
+	<tnt:ToolHeader>
+		<Button icon="sap-icon://menu2" type="Transparent">
+		</Button>
+		<Image press="onPressLogo" src="https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/sample/ImageContent/images/SAPLogoLargeTile_28px_height.png">
+		</Image>
+		<Text text="Name of the Tool" wrapping="false">
+		</Text>
+		<ToolbarSpacer />
+		<l:Grid defaultSpan="XL10 L10 M12 S12" defaultIndent="L2">
+				
+				
+		<SearchField 
+				id="searchField"
+				width="100%"
+				
+				placeholder="search for..."
+				enableSuggestions="true"
+				search="onSearch"
+				suggest="onSuggest"
+				suggestionItems="{
+					path: '/ProductCollection',
+					sorter: { path: 'Name' }
+				}"
+				>
+				<suggestionItems>
+					<SuggestionItem  text="{Name}" description="{path:'Price'} {path:'CurrencyCode'}" key="{ProductId}"/>
+				</suggestionItems>
+			</SearchField>
+			</l:Grid>
+		
+		<!--<Input width="auto" placeholder="Type To Search" id="input" liveChange="onFilter"/>-->
+	
+		
+	<!--
+		<Button icon="sap-icon://task" type="Transparent">
+		</Button>
+		<Button icon="sap-icon://bell" type="Transparent">
+		</Button>
+		<Button icon="test-resources/sap/tnt/images/avatar.png" type="Transparent">
+		</Button>
+		<Button icon="sap-icon://grid" type="Transparent">
+		</Button>-->
+	</tnt:ToolHeader>
+
+</core:FragmentDefinition>

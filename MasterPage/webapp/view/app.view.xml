@@ -1,0 +1,14 @@
+<mvc:View controllerName="MasterPage.MasterPage.controller.app" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	
+		
+		<App>
+			<pages>
+				<Page  title="app">
+					<content>
+						<Button text="go to split" press="onClick"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+
+</mvc:View>

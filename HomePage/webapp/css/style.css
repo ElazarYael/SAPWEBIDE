@@ -1,0 +1,23 @@
+/* Enter your custom styles here */
+
+
+.sapUiTableEndAlign{text-align: right; direction: rtl;} 
+
+.div{
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 68px;
+    height: 46px;
+    background-color:red;
+}
+.divborder{
+	
+  border-style: solid;
+  border-color: coral;
+
+}
+
+
+

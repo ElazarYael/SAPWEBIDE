@@ -1,0 +1,29 @@
+<mvc:View controllerName="Table.Table.controller.app" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Page title="Fragment Example">
+							<content>
+								<Table id="idTable" mode="SingleSelectLeft" backgroundDesign="Solid">
+									<columns>
+										<Column><Text text="Personnel No."/></Column>
+										<Column><Text text="FIRSTNAME"/></Column>
+										<Column><Text text="LASTNAME"/></Column>
+										<Column><Text text="DEPARTMENT"/></Column>
+										<Column><Text text="E-Mail"/></Column>
+									</columns>
+								</Table>
+							
+								<Button text="UPDATE" press="onUpdate"/>
+								<Button text="CREATE" press="onCREATE"/>
+								<Button text="DELETE" press="onDelete"/>
+							</content>
+						</Page>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
